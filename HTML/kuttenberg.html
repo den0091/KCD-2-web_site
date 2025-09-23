@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Куттенберг - KCD II</title>
+    <link rel="stylesheet" href="kuttenberg.css">
+</head>
+<body>
+
+<!-- ===== Шапка з меню ===== -->
+<header>
+    <a href="main.html">Основна</a>
+    <a href="locations.html">Локації</a>
+    <a href="kuttenberg.html">Куттенберг</a>
+    <a href="information.html">Інформація</a>
+    <img src="https://press.warhorsestudios.cz/uploads/KCD_2_Logo_Render_01_STG_13v1_9836a817ed.jpg" alt="KCD II">
+</header>
+
+<!-- ===== Основний контент ===== -->
+<div class="content">
+    <h1>Куттенберг</h1>
+            <img id="mainImage" src="Зображення/GZi2rzQXoBECHqu.jpg" alt="Куттенберг">
+    <p>Куттенберг — центральне місто гри Kingdom Come: Deliverance II. Тут проходять ключові події сюжету та розташовані головні торгові площі, замки та ремісничі майстерні. Місто оточене річками та лісами, а його історична архітектура створює унікальний колорит.</p>
+    <a href="locations.html" class="button">Назад</a>
+</div>
+
+<!-- ===== Вікно з додатковою інформацією ===== -->
+<div id="infoBox">
+    <p>Куттенберг — серце подій гри, де гравець зустрічає ключових NPC та знаходить цінні ресурси. Місто розділене на райони з ринками, замками та стратегічними будівлями.</p>
+    <button id="closeInfo">Закрити</button>
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+const header = document.querySelector('header');
+let lastScroll = 0;
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll) header.classList.add('hidden');
+    else header.classList.remove('hidden');
+    lastScroll = currentScroll;
+});
+
+const mainImage = document.getElementById('mainImage');
+const infoBox = document.getElementById('infoBox');
+const closeBtn = document.getElementById('closeInfo');
+
+mainImage.addEventListener('click', () => { infoBox.style.display = 'block'; });
+closeBtn.addEventListener('click', () => { infoBox.style.display = 'none'; });
+</script>
+
+</body>
+</html>

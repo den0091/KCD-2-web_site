@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Encient German Gothic';
+    src: url('fonts/Germgoth.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url("Зображення/GoQoYGXWQAABsI9.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #f2f2f2;
+    font-family: 'Encient German Gothic', Georgia, serif;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    gap: 20px;
+    clip-path: polygon(
+        0 0, 100% 0, 100% 90%, 95% 100%, 90% 95%, 85% 100%, 80% 95%, 75% 100%,
+        70% 95%, 65% 100%, 60% 95%, 55% 100%, 50% 95%, 45% 100%, 40% 95%, 35% 100%,
+        30% 95%, 25% 100%, 20% 95%, 15% 100%, 10% 95%, 5% 100%, 0 90%
+    );
+    transition: top 0.4s ease;
+}
+
+header.hidden { top: -120px; }
+
+header img { height: 50px; border-radius: 10px; }
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #a00000, #ff0000);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255,0,0,0.7);
+    transition: 0.3s;
+    font-family: 'Encient German Gothic', serif;
+}
+
+header a:hover {
+    background: linear-gradient(135deg, #ff0000, #a00000);
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255,0,0,1);
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.6);
+    margin: auto;
+    width: 90%;
+    padding: 140px 20px 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content h1, .content h2 { font-weight: bold; }
+
+.content p { font-size: 18px; line-height: 1.6; margin-bottom: 25px; }
+
+.map-container { margin: 20px 0; position: relative; }
+
+#mainMap {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#mainMap:hover { transform: scale(1.1); }
+
+.info-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    display: none;
+    pointer-events: none;
+}
+
+#mainMap:hover + .info-overlay { display: block; }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item { width: 330px; position: relative; }
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+}
+
+.gallery-item img:hover { transform: scale(1.1); }
+
+.gallery-item .info-overlay {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.gallery-item:hover .info-overlay { display: block; }
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 20px;
+    color: white;
+    background: linear-gradient(135deg, #a00000, #ff0000);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0px 0px 15px rgba(255,0,0,0.7);
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff0000, #a00000);
+    transform: scale(1.1);
+    box-shadow: 0px 0px 25px rgba(255,0,0,1);
+}
