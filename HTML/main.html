@@ -63,5 +63,23 @@
     <iframe src="https://www.youtube.com/embed/ju8R8gwD-Vg" title="KCD II Trailer" allowfullscreen></iframe>
 </div>
 
+<script>
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    // скрол вниз – ховаємо шапку
+    header.classList.add("hidden");
+  } else {
+    // скрол вверх – показуємо шапку
+    header.classList.remove("hidden");
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
 </body>
 </html>
